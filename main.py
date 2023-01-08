@@ -3,7 +3,10 @@ from typing import Union
 from fastapi import FastAPI
 from pydantic import BaseModel
 
+from users.users_router import router as users_router
+
 app = FastAPI()
+app.include_router(users_router)
 
 
 class Item(BaseModel):
